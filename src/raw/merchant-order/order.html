@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外送平台 - 待處理訂單</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="order-panel">
+
+            <header class="header">
+                <h1>待處理訂單</h1>
+                <div id="refresh-indicator" class="refresh-indicator">
+                    🔄 上次更新: <span>1 秒前</span>
+                </div>
+            </header>
+            
+            <div id="order-list" class="order-list">
+                <div class="empty-state">目前沒有待接訂單。</div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2 id="modal-order-title">訂單詳情 - #</h2>
+            <div id="modal-body" class="modal-body">
+                </div>
+            <div class="modal-actions">
+                <button id="accept-btn" class="btn btn-accept" onclick="handleOrderAction('accept')">✅ 接單</button>
+                <button id="reject-btn" class="btn btn-reject" onclick="handleOrderAction('reject')">❌ 拒單</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="order.js"></script>
+</body>
+</html>

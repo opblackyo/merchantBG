@@ -1,0 +1,205 @@
+/* order.css */
+
+/* 模擬您模板的底圖紋理和淺色背景 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* 這裡使用一個純色模擬模板的基調，實際模板的紋理需要圖片 */
+    background-color: #fcf8f0; 
+    color: #333;
+    margin: 0;
+    padding: 0; 
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 50px; /* 增加頂部間距 */
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+}
+
+/* 模擬模板的米色主區域 */
+.order-panel {
+    background-color: #eee8d5; /* 淺米色/卡其色，更貼近模板中央區塊 */
+    border-radius: 20px; /* 大圓角 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px; /* 增加內邊距 */
+}
+
+/* 標頭與刷新提示 */
+.header {
+    display: flex;
+    flex-direction: column; /* 改為垂直排列 */
+    align-items: flex-start;
+    border-bottom: 1px solid #c2b59a; /* 使用與模板相符的柔和分隔線 */
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2em;
+    color: #5d4037; /* 深棕色 */
+    margin: 0 0 5px 0;
+}
+
+.refresh-indicator {
+    font-size: 0.9em;
+    color: #8d6e63;
+}
+
+/* 訂單清單 */
+.order-list {
+    min-height: 200px;
+}
+
+.order-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-card:hover {
+    background-color: #fffaf0; 
+}
+
+.order-info {
+    flex-grow: 1;
+}
+
+.order-id {
+    font-weight: bold;
+    color: #3e2723;
+}
+
+.order-summary {
+    font-size: 0.9em;
+    color: #757575;
+    margin-top: 5px;
+}
+
+.status-tag {
+    background-color: #ffe0b2; /* 淺橘色背景 */
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.85em;
+    flex-shrink: 0;
+}
+
+.empty-state {
+    text-align: center;
+    color: #a19586;
+    padding: 50px;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* Modal (訂單詳情) 樣式 */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; /* 確保在最上層 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); 
+    padding-top: 50px;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto; 
+    padding: 30px;
+    width: 80%;
+    max-width: 450px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body h4 {
+    color: #5d4037;
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+.modal-body p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.item-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 10px 0;
+}
+
+.item-list li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #f0f0f0;
+}
+
+.modal-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 按鈕樣式 */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    width: 48%; 
+    font-size: 1.1em;
+}
+
+.btn-accept {
+    background-color: #66bb6a; /* 柔和綠色 */
+    color: white;
+}
+
+.btn-accept:hover {
+    background-color: #4caf50;
+    transform: translateY(-1px);
+}
+
+.btn-reject {
+    background-color: #ef5350; /* 柔和紅色 */
+    color: white;
+}
+.btn-reject:hover {
+    background-color: #f44336;
+    transform: translateY(-1px);
+}

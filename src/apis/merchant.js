@@ -84,3 +84,24 @@ export async function updateMenuItem(menuItem) {
 export async function deleteMenuItem(menuId) {
   return apiPost('/api/merchant/menu/delete', { menu_id: menuId })
 }
+
+// ========== 儀表板統計 API ==========
+
+/**
+ * 取得營收趨勢資料
+ * GET /api/dashboard/revenue?range=7d|30d|90d
+ * @param {string} range - 查詢範圍 (7d, 30d, 90d)
+ * @returns {Promise<{labels: string[], values: number[], currency: string}>}
+ */
+export async function getRevenueData(range = '7d') {
+  return apiGet(`/api/dashboard/revenue?range=${range}`)
+}
+
+/**
+ * 取得熱銷商品排名
+ * GET /api/dashboard/top-products
+ * @returns {Promise<{items: Array<{menu_id: number, name: string, count: number}>}>}
+ */
+export async function getTopProducts() {
+  return apiGet('/api/dashboard/top-products')
+}
